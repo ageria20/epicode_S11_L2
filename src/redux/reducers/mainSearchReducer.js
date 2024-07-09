@@ -1,7 +1,7 @@
 const initialState = {
+  company: [],
   isLoading: false,
   query: "",
-  company: [],
 };
 
 const addCompany = (state = initialState, action) => {

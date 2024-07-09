@@ -19,8 +19,8 @@ export const submitFetch = query => {
     try {
       const response = await fetch(baseEndpoint + query + "&limit=20");
       if (response.ok) {
-        const { company } = await response.json();
-        dispatch(storeCompany(company));
+        const { data } = await response.json();
+        dispatch(storeCompany(data));
         dispatch({ type: COMPANY_LOADING_OFF });
       } else {
         alert("Error fetching results");
