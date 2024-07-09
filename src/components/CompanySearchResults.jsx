@@ -3,11 +3,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import Job from "./Job";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getJobsFetch, storeJobs } from "../redux/actions";
+import { getJobsFetch } from "../redux/actions";
 
 const CompanySearchResults = () => {
   // const [jobs, setJobs] = useState([]);
-  const jobs = useSelector(state => state.companyResults.content);
+  const jobs = useSelector(state => state.companyResults.jobs);
+
   const dispatch = useDispatch();
   const params = useParams();
 

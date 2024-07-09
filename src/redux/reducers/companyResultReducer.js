@@ -1,5 +1,5 @@
 const initialState = {
-  content: [],
+  jobs: [],
 };
 
 const addJob = (state = initialState, action) => {
@@ -7,8 +7,9 @@ const addJob = (state = initialState, action) => {
     case "JOBS":
       return {
         ...state,
-        content: state.content.concat(action.payload),
+        jobs: state.jobs.concat(action.payload),
       };
+
     default:
       return state;
   }
