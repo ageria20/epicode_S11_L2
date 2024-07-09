@@ -2,9 +2,10 @@ import { Button, Container, ListGroup, ListGroupItem } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Job from "./Job";
 import { Link } from "react-router-dom";
+import { deleteFavouriteJob } from "../redux/actions";
 
 const FavouriteList = () => {
-  const jobs = useSelector(state => state.favouriteJobs.content);
+  const jobs = useSelector(state => state.favourites.content);
 
   const dispatch = useDispatch();
 
@@ -21,7 +22,7 @@ const FavouriteList = () => {
             <Button
               variant="danger"
               onClick={() => {
-                dispatch({ type: "DELETE_JOB", payload: jobData._id });
+                dispatch(deleteFavouriteJob(jobData._id));
               }}
             >
               <svg
